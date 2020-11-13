@@ -1,0 +1,127 @@
+import java.util.*;
+import java.util.ArrayList; 
+import java.util.Arrays; 
+import java.util.List; 
+import java.util.stream.Collectors; 
+
+public class Main {
+    public static void main(String[] args) throws Exception {
+        Method_Test_Logika_1(); 
+        Method_Test_Logika_3(); 
+        Method_Test_Logika_5(); 
+    }
+    
+
+
+
+  static void Method_Test_Logika_5() {
+      int intArray[] = new int[]{5, 6, 15, 3, 10, 22, 15};
+      ArrayList<Integer> myList = new ArrayList();
+      
+      for (int x = 0; x < intArray.length; x++){
+          int m = (x + 1);
+          
+          for (int y = m; y < intArray.length; y++){
+              int j = (intArray[y] - intArray[x]);
+              
+              if(j > 0){
+                  myList.add(j);
+              }
+          }
+      }
+      
+      if(myList == null || myList.size() == 0) {
+          System.out.println("Test Logic 5 Jual-beli Saham -Result : Harga selalu turun");
+          
+      } else {
+         System.out.println("Test Logic 5 Jual-beli Saham - Result : " +  Collections.max(myList));
+         
+      }
+  }  
+     
+
+  public static String check_dictionary(String str, String str1, String ipt){
+      String ad = "0";
+      ArrayList<String> List = new ArrayList();
+      List.add(str+str1);
+      if(str == ipt){
+          ad = "1";
+      } else if(str1 == ipt){
+          ad = "2";
+      } else if(List.contains(ipt) == true){
+          ad = "3";
+      } else {
+          ad = "0";
+      }
+      
+      return ad;
+      
+  }
+  
+    
+  static void Method_Test_Logika_3() {
+      String input = "program";
+      String[] dictionary = new String[]{"pro", "gram", "merit", "program", "it", "programmer"};
+      ArrayList<String> myList = new ArrayList();
+      
+      for (int x = 0; x < dictionary.length; x++){
+          int m = (x + 1);
+          
+          for (int y = m; y < dictionary.length; y++){
+              String u = check_dictionary(dictionary[x], dictionary[y], input);
+              if(u != "0"){
+                  if(u == "1"){
+                      myList.add(dictionary[x]);
+                  } else if(u == "2"){
+                      myList.add(dictionary[y]);
+                  } else if(u == "3"){
+                      myList.add(dictionary[x]);
+                      myList.add(dictionary[y]);
+                  }
+              }
+              
+              
+          }
+          
+      }
+      
+      List<String> newList = myList.stream().distinct().collect(Collectors.toList());  
+      
+      if(newList == null || newList.size() == 0) {
+          System.out.println("Test Logic 3 Programmer IT - Result : No Way");
+      } else {
+          System.out.println("Test Logic 3 Programmer IT - Result : " + newList);
+      }        
+
+  }      
+    
+  static void Method_Test_Logika_1() {
+      int input = 18;
+      int[] intArray = new int[]{2,7,11,15};
+      ArrayList<Integer> myList = new ArrayList();
+      
+      for (int x = 0; x < intArray.length; x++){
+          int m = (x + 1);
+          
+          for (int y = m; y < intArray.length; y++){
+              int j = (intArray[x] + intArray[y]);
+              
+              if(j == input){ 
+                  myList.add(x);
+                  myList.add(y);
+                  break;
+                  
+              } 
+          }
+      }
+      
+      if(myList == null || myList.size() == 0) {
+          System.out.println("Test Logic 1 Perfect Two - Result : No Way");
+          
+      } else {
+          System.out.println("Test Logic 1 Perfect Two - Result : " + myList);
+      }      
+      
+     
+  }    
+}
