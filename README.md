@@ -5,8 +5,8 @@
 ## How to install
 
 ```bash
-git clone https://github.com/sahadroid/react-redux-crud-sahat-test-barito.git
-cd react-redux-crud-sahat-test-barito
+git clone https://github.com/sahadroid/react-redux-crud-sahat-test-barito-integra-teknologi.git
+cd react-redux-crud-sahat-test-barito-integra-teknologi
 ```
 
 In terminal 1:
